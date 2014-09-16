@@ -1,0 +1,9 @@
+{
+  "name": "nw-demo",
+  "description": "A demo node-webkit app using SIP",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-node-webkit-builder": "^0.2.2"
+  }
+}

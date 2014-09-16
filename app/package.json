@@ -1,0 +1,12 @@
+{
+  "name": "nw-demo",
+  "description": "A demo node-webkit app using SIP",
+  "version": "0.0.1",
+  "window": {
+    "title": "NW Demo",
+    "width": 800,
+    "height": 600,
+    "toolbar": false
+  },
+  "main": "index.html"
+}
