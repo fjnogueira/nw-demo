@@ -4,6 +4,19 @@
     <title>NW Demo</title>
   </head>
   <body>
-    hello
+    <div class="setup">
+      <input type="text" name="server" value="" id="server" placeholder="Server" />
+      <input type="text" name="username" value="" id="username" placeholder="Username" />
+      <input type="password" name="password" value="" id="password" placeholder="Password" />
+      <input type="text" name="extension" value="" id="extension" placeholder="Extension" />
+      <button type="submit" id="submit">Make Call</button>
+    </div>
+    <p>
+      Enter in the Asterisk server, your SIP username and password, then the extension you want to call.
+    </p>
+    <video id="remote"></video>
+    <video id="local" muted></video>
+    <script src="./sip.js"></script>
+    <script src="./application.js"></script>
   </body>
 </html>

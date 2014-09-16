@@ -5,8 +5,7 @@
   "window": {
     "title": "NW Demo",
     "width": 800,
-    "height": 600,
-    "toolbar": false
+    "height": 600
   },
   "main": "index.html"
 }
