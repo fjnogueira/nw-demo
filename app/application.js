@@ -1,3 +1,13 @@
+var app = angular.module('nw-demo', ['ngRoute']);
+app.config(function($routeProvider) {
+  $routeProvider.when('/', {
+    controller: 'VideosController',
+    templateUrl: '_videos.html'
+  });
+});
+
+app.controller('VideosController', function($scope) {});
+
 window.onload = function() {
   document.getElementById('submit').addEventListener('click', function(e) {
     e.preventDefault();
