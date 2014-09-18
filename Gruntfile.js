@@ -10,9 +10,19 @@ module.exports = function(grunt) {
         appVersion: '0.0.1'
       },
       src: ['./app/**']
+    },
+    copy: {
+      main: {
+        files: [{
+          src: 'libraries/mac/ffmpegsumo.so',
+          dest: 'dist/NW Demo/osx/NW Demo.app/Contents/Frameworks/node-webkit Framework.framework/Libraries/ffmpegsumo.so',
+          flatten: true
+        }]
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-node-webkit-builder');
-  grunt.registerTask('default', ['nodewebkit']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.registerTask('default', ['nodewebkit', 'copy']);
 };
