@@ -1,14 +1,4 @@
-var app = angular.module('nw-demo', ['ngRoute']);
-app.config(function($routeProvider) {
-  $routeProvider.when('/', {
-    controller: 'VideosController',
-    templateUrl: '_videos.html'
-  });
-});
-
-app.controller('VideosController', function($scope) {});
-
-window.onload = function() {
+var registerSIP = function() {
   var server = document.querySelector('#server').value,
       username = document.querySelector('#username').value,
       password = document.querySelector('#password').value,
@@ -18,7 +8,22 @@ window.onload = function() {
     register: true,
     registerExpires: 90,
     registrarServer: 'sip:'+server,
-    stunServers: [null],
+    stunServers: [
+      "stun:stun4.l.google.com:19302",
+      "stun:stun.l.google.com:19302",
+      "stun:stun1.l.google.com:19302",
+      "stun:stun2.l.google.com:19302",
+      "stun:stun3.l.google.com:19302",
+      "stun:stun.ekiga.net",
+      "stun:stun.ideasip.com",
+      "stun:stun.rixtelecom.se",
+      "stun:stun.schlund.de",
+      "stun:stun.stunprotocol.org:3478",
+      "stun:stun.voiparound.com",
+      "stun:stun.voipbuster.com",
+      "stun:stun.voipstunt.com",
+      "stun:stun.voxgratia.org"
+    ],
     wsServers: 'ws://'+server+':8088/ws',
     uri: 'sip:'+username+'@'+server,
     authorizationUser: username,
@@ -57,4 +62,20 @@ window.onload = function() {
       session = null;
     });
   });
-};
+}
+
+var app = angular.module('nw-demo', ['ngRoute']);
+app.config(function($routeProvider) {
+  $routeProvider.when('/', {
+    controller: 'VideosController',
+    templateUrl: '_videos.html'
+  });
+});
+
+app.controller('VideosController', function($scope) {
+  registerSIP();
+});
+
+var gui = window.require('nw.gui'),
+    appWindow = gui.Window.get();
+appWindow.showDevTools();
