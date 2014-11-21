@@ -8,22 +8,7 @@ var registerSIP = function() {
     register: true,
     registerExpires: 90,
     registrarServer: 'sip:'+server,
-    stunServers: [
-      "stun:stun4.l.google.com:19302",
-      "stun:stun.l.google.com:19302",
-      "stun:stun1.l.google.com:19302",
-      "stun:stun2.l.google.com:19302",
-      "stun:stun3.l.google.com:19302",
-      "stun:stun.ekiga.net",
-      "stun:stun.ideasip.com",
-      "stun:stun.rixtelecom.se",
-      "stun:stun.schlund.de",
-      "stun:stun.stunprotocol.org:3478",
-      "stun:stun.voiparound.com",
-      "stun:stun.voipbuster.com",
-      "stun:stun.voipstunt.com",
-      "stun:stun.voxgratia.org"
-    ],
+    stunServers: 'stun:'+server+':3478',
     wsServers: 'ws://'+server+':8088/ws',
     uri: 'sip:'+username+'@'+server,
     authorizationUser: username,
@@ -73,7 +58,10 @@ app.config(function($routeProvider) {
 });
 
 app.controller('VideosController', function($scope) {
-  registerSIP();
+
+  $scope.register = function() {
+    registerSIP();
+  };
 });
 
 var gui = window.require('nw.gui'),
