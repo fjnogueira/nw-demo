@@ -5,16 +5,7 @@ var registerSIP = function() {
       extension = document.querySelector('#extension').value;
 
   var configuration = {
-    register: true,
-    registerExpires: 90,
-    registrarServer: 'sip:'+server,
-    stunServers: 'stun:'+server+':3478',
-    wsServers: 'ws://'+server+':8088/ws',
-    uri: 'sip:'+username+'@'+server,
-    authorizationUser: username,
-    password: password,
-    displayName: username,
-    hackIpInContact: true,
+    uri: username+'@'+server,
     traceSip: true
   },
   options = {
