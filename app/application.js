@@ -1,7 +1,6 @@
 var registerSIP = function() {
   var server = document.querySelector('#server').value,
       username = document.querySelector('#username').value,
-      password = document.querySelector('#password').value,
       extension = document.querySelector('#extension').value;
 
   var configuration = {
