@@ -3,9 +3,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     nodewebkit: {
       options: {
-        version: '0.10.5',
+        version: '0.11.0',
         buildDir: './dist',
-        platforms: ['osx'],
+        platforms: ['osx', 'win'],
         appName: 'NW Demo',
         appVersion: '0.0.1'
       },
